@@ -11,7 +11,7 @@ const heightValueText = heightField.value;
 const height = parseFloat(heightValueText);
 console.log(height);
 const area = 0.5 * base * height;
-console.log(area);
+// console.log(area);
 
 // show triangle area
 const areaSpan = document.getElementById('triangle-area');
@@ -23,13 +23,13 @@ function calculateRectangleArea(){
    const widthField = document.getElementById('rectangle-width');
    const widthValueText = widthField.value;
    const width = parseFloat(widthValueText);
-   console.log(width);
+//    console.log(width);
 
 //    get rectangle length
 const lengthField =document.getElementById('rectangle-length');
 const lengthValueText = lengthField.value;
 const length = parseFloat(lengthValueText);
-console.log(length);
+// console.log(length);
 
 // calculate area 
 const area = width * length;
@@ -37,4 +37,22 @@ const area = width * length;
 // show rectangle area 
 const rectangleAreaSpan = document.getElementById('rectangle-area');
 rectangleAreaSpan.innerText = area;
+}
+
+// reusable function -----> reduce duplicate code
+function calculateParallelogramArea(){
+    const base = getInputValue('parallelogram-base');
+    console.log(base);
+
+    const height = getInputValue('parallelogram-height');
+    console.log(height);
+    
+    const area = base * height;
+}
+// reusable get input value field i number
+function getInputValue(fieldId){
+    const inputField = document.getElementById(fieldId);
+    const inputValueText = inputField.value;
+    const value = parseFloat(inputValueText);
+    return value;
 }
